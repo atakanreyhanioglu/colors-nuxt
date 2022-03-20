@@ -21,7 +21,11 @@ export default {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css?family=Yesteryear",
       },
-    ],
+      {
+      rel:"stylesheet",
+      href:"https://use.fontawesome.com/releases/v5.0.8/css/all.css",
+      }
+      ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

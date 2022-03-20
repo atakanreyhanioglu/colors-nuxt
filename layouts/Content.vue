@@ -15,7 +15,7 @@
           </ui-textfield>
           <ui-button raised class="color-button"><span><b>Get Colors</b></span></ui-button>
         </div>
-      </div>
+    </div>
 </template>
 
 <script>
