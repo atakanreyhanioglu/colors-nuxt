@@ -23,10 +23,10 @@ export default {
    color: #ffffff;
  }
  .footer-bottom{
+   height: 40px;
    display: flex;
    background: #000000;
    width: 100%;
-   padding-bottom: 20px;
    text-align: center;
    align-items: center;
    justify-content: center;
