@@ -60,4 +60,8 @@ export default {
   build: {
     extractCSS: true
   },
+  // @TODO add product url
+  env: {
+    baseURL: process.env.NODE_ENV === 'production' ? 'producturl' : 'http://localhost:3000'
+  },
 }
