@@ -23,15 +23,13 @@ export default {
    color: #ffffff;
  }
  .footer-bottom{
+   display: flex;
    background: #000000;
-   width: 100vw;
-   padding: 20px;
+   width: 100%;
    padding-bottom: 20px;
    text-align: center;
    align-items: center;
    justify-content: center;
-   display: flex;
-   flex-direction: column;
  }
 
 </style>
