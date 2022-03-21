@@ -50,8 +50,8 @@ ul {
   padding: 0;
 }
 .circle {
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
   background-color: white;
   border-radius: 50%;
   margin: 10px;
