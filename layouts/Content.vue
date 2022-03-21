@@ -1,20 +1,24 @@
 <template>
     <div class="content">
-      <div class="clean-area"></div>
-        <div class="title">
-          <h2>
-            Have you ever wanted to know the color of a website?
-          </h2>
-          Webcolors is the tool you need.
-          It gathers all colors and prints them out in a list
-          that can be copied and pasted.
-        </div>
-        <div class="page-url">
-          <ui-textfield class="input-field" outlined>
-            Page url
-          </ui-textfield>
-          <ui-button raised class="color-button"><span><b>Get Colors</b></span></ui-button>
-        </div>
+          <div class="left-side">
+            <div class="title">
+              <h2>
+                Have you ever wanted to know the color of a website?
+              </h2>
+              Webcolors is the tool you need.
+              It gathers all colors and prints them out in a list
+              that can be copied and pasted.
+            </div>
+            <div class="page-url">
+              <ui-textfield class="input-field" outlined>
+                Page url
+              </ui-textfield>
+              <ui-button raised class="color-button"><span><b>Colors</b></span></ui-button>
+            </div>
+          </div>
+          <div class="right-side">
+            <img src="~/assets/choose-color.svg" alt="choose-color-svg" style="width: 80%; height: 236px"/>
+          </div>
     </div>
 </template>
 
@@ -28,14 +32,22 @@ export default {
   width: 100%;
   height: 700px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-wrap: wrap;
 }
-.clean-area {
-  width: 100%;
-  height: 50px;
-  background-color: transparent;
+.left-side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 40px;
+}
+.right-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 50%;
+  margin-top: 40px;
 }
 .title h2 {
   color: darkcyan;
@@ -50,11 +62,12 @@ export default {
   align-items: center;
   justify-content: space-between;
   margin-top: 50px;
+  width: 100%;
 }
 .color-button {
   height: 54px;
-  margin-left: 50px;
-  width: 150px;
+  margin-left: 20px;
+  width: 100px;
 }
 .input-field {
   width: 550px;

@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <Navbar />
-    <ContentLayout />
-    <FooterLayout />
+    <ContentLayout/>
+    <FooterLayout/>
+    <PaletteLayout/>
   </div>
 </template>
 
@@ -10,15 +11,17 @@
 import Navbar from '@/components/Navbar'
 import ContentLayout from "@/layouts/Content";
 import FooterLayout from "@/layouts/Footer";
+import PaletteLayout from "@/layouts/Palette";
 
 export default {
   name: 'HomePage',
-  components: {FooterLayout, ContentLayout, Navbar}
+  components: {FooterLayout, PaletteLayout, ContentLayout, Navbar}
 }
 </script>
 <style>
  .container {
-   width: 1280px;
+   width: 100%;
+   max-width: 1280px;
    height: 950px;
    display: flex;
    flex-direction: column;

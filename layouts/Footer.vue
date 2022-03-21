@@ -26,7 +26,7 @@ export default {
    background: #000000;
    width: 100vw;
    padding: 20px;
-   padding-bottom: 40px;
+   padding-bottom: 20px;
    text-align: center;
    align-items: center;
    justify-content: center;

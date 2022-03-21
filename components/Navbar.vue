@@ -20,7 +20,7 @@ export default {
 
 <style>
 .navbar {
-  width: 80%;
+  width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
@@ -47,7 +47,9 @@ export default {
   text-shadow: rgba(48, 33, 33, 0) 2px 2px 2px;
 }
 .member {
-  justify-content: space-between;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .member span {
   font-style: italic;
