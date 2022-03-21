@@ -23,7 +23,16 @@ export default {
         circle.style.fontSize = "15px"
       })
       circle.addEventListener('mouseout', () => {
-        circle.innerText = ``
+        circle.innerText = ''
+      })
+      circle.addEventListener('click', (e) => {
+        document.execCommand('copy');
+      })
+      circle.addEventListener("copy", function (event) {
+        event.preventDefault();
+        if (event.clipboardData) {
+          event.clipboardData.setData("text/plain", circle.innerText);
+        }
       })
     })
   }
