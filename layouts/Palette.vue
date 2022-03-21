@@ -22,10 +22,25 @@ export default {
   width: 90%;
   height: 150px;
   border-radius: 20px;
+  display: flex;
 }
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin-top: -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.circle {
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 35px;
+}
+.dominant {
+  width: 100px;
+  height: 100px;
 }
 </style>
