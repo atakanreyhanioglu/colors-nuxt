@@ -49,6 +49,7 @@ export default {
   justify-content: center;
   -webkit-box-shadow: 3px 9px 40px -1px rgba(0,0,0,0.35);
   box-shadow: 3px 9px 40px -1px rgba(0,0,0,0.35);
+  overflow: unset;
 }
 ul {
   list-style-type: none;
@@ -87,5 +88,18 @@ ul {
 }
 .fifthCircle {
   background-color: darkcyan;
+}
+@media (max-width: 965px) {
+  .fifthCircle {
+    display: none;
+  }
+}
+@media (max-width: 830px) {
+  .fifthCircle {
+    display: none;
+  }
+  .fourthCircle {
+    display: none;
+  }
 }
 </style>
