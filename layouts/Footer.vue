@@ -18,14 +18,13 @@ export default {
    bottom: 0;
    left: 0;
    right: 0;
-   background: grey;
    padding-top: 40px;
    color: #ffffff;
  }
  .footer-bottom{
    height: 40px;
    display: flex;
-   background: #000000;
+   background: grey;
    width: 100%;
    text-align: center;
    align-items: center;

@@ -19,22 +19,21 @@ export default {
     const circles = document.querySelectorAll('li')
     circles.forEach((circle) => {
       circle.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = '#000000'
+        circle.innerText = `${window.getComputedStyle(circle, null).backgroundColor}`
+        circle.style.fontSize = "15px"
       })
       circle.addEventListener('mouseout', () => {
-        // eslint-disable-next-line no-console
-        console.log('hey2')
+        circle.innerText = ``
       })
     })
-
   }
 }
 </script>
 <style>
 .palette {
   background-color: white;
-  width: 90%;
-  height: 170px;
+  width: 100%;
+  height: 220px;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -48,17 +47,21 @@ ul {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 0;
 }
 .circle {
-  height: 80px;
-  width: 80px;
+  height: 150px;
+  width: 150px;
   background-color: white;
   border-radius: 50%;
-  margin: 35px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dominant {
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   background-color: #C099F8;
 }
 .firstCircle {
