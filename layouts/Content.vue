@@ -18,6 +18,7 @@
           </div>
           <div class="right-side">
             <img src="~/assets/choose-color.svg" alt="choose-color-svg" style="width: 80%; height: 236px"/>
+            <img src="~/assets/img.png" alt="paint" class="paint" style="width: 150px; height: 150px"/>
           </div>
     </div>
 </template>
@@ -30,14 +31,14 @@ export default {
 <style>
 .content {
   width: 100%;
-  height: 700px;
+  height: 360px;
   display: flex;
   flex-wrap: wrap;
 }
 .left-side {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   width: 50%;
   margin-top: 40px;
@@ -48,11 +49,13 @@ export default {
   align-items: flex-start;
   width: 50%;
   margin-top: 40px;
+  position: relative;
 }
 .title h2 {
   color: darkcyan;
   justify-content: center;
   display: flex;
+  align-items: center;
 }
 .title h1 p {
   color: #C099F8;
@@ -66,10 +69,14 @@ export default {
 }
 .color-button {
   height: 54px;
-  margin-left: 20px;
+  margin-left: 10px;
   width: 100px;
 }
 .input-field {
   width: 550px;
+}
+.paint {
+  position: absolute;
+  z-index: -1;
 }
 </style>

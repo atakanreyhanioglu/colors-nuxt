@@ -1,6 +1,13 @@
 <template>
   <div class="palette">
-    palette
+    <ul>
+      <li class="circle dominant"></li>
+      <li class="circle"></li>
+      <li class="circle"></li>
+      <li class="circle"></li>
+      <li class="circle"></li>
+      <li class="circle"></li>
+    </ul>
   </div>
 </template>
 
@@ -11,9 +18,14 @@ export default {
 </script>
 <style>
 .palette {
-  border-style: solid 2px;
-  background-color: #FF6666;
-  width: 400px;
-  height: 200px;
+  background-color: #ff9f75;
+  width: 90%;
+  height: 150px;
+  border-radius: 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 </style>
