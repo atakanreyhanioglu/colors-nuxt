@@ -38,8 +38,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 1px 9px 21px 4px rgba(0,0,0,0);
-  box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 1px 9px 21px 4px rgba(0,0,0,0);
+  -webkit-box-shadow: 3px 9px 40px -1px rgba(0,0,0,0.35);
+  box-shadow: 3px 9px 40px -1px rgba(0,0,0,0.35);
 }
 ul {
   list-style-type: none;
