@@ -1,7 +1,15 @@
 <template>
   <div class="footer">
     <div class="footer-bottom">
-      &copy; Copyright webcolors 2022
+     <div>
+       &copy; Copyright webcolors 2022
+     </div>
+      <div class="github">
+        <b>GitHub&nbsp;</b>
+        <a href="https://github.com/atakanreyhanioglu">
+          <img src="~/assets/icons8-github.svg" alt="logo"/>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -24,9 +32,14 @@ export default {
  .footer-bottom{
    height: 40px;
    display: flex;
-   background: grey;
    width: 100%;
    text-align: center;
+   align-items: center;
+   justify-content: space-around;
+   color: black;
+ }
+ .github {
+   display: flex;
    align-items: center;
    justify-content: center;
  }
