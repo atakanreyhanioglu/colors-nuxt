@@ -58,8 +58,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCSS: true
-  },
+    extend(config) {
+      config.resolve.alias.vue = 'vue/dist/vue.common'
+     }
+    },
   // @TODO add product url
   env: {
     baseURL: process.env.NODE_ENV === 'production' ? 'producturl' : 'http://localhost:3000'

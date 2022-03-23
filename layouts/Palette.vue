@@ -1,12 +1,12 @@
 <template>
   <div class="palette">
     <ul>
-      <li class="circle dominant"></li>
-      <li class="circle firstCircle"></li>
-      <li class="circle secondCircle"></li>
-      <li class="circle thirdCircle"></li>
-      <li class="circle fourthCircle"></li>
-      <li class="circle fifthCircle"></li>
+      <li class="circle dominant" @click="showToast"></li>
+      <li class="circle firstCircle" @click="showToast"></li>
+      <li class="circle secondCircle" @click="showToast"></li>
+      <li class="circle thirdCircle" @click="showToast"></li>
+      <li class="circle fourthCircle" @click="showToast"></li>
+      <li class="circle fifthCircle" @click="showToast"></li>
     </ul>
   </div>
 </template>
@@ -27,6 +27,7 @@ export default {
       })
       circle.addEventListener('click', (e) => {
         document.execCommand('copy');
+
       })
       circle.addEventListener("copy", function (event) {
         event.preventDefault();
@@ -35,6 +36,15 @@ export default {
         }
       })
     })
+  },
+  methods: {
+    showToast() {
+      this.$toast({
+        timeoutMs: 2000,
+        message: 'Color is copied! 👍',
+        position: 'top'
+      });
+    }
   }
 }
 </script>

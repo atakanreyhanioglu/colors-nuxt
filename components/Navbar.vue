@@ -1,13 +1,11 @@
 <template>
   <div class="navbar">
-    <div class="announce"><span id="text">WEBCOLORS</span></div>
+    <div class="announce"><span class="text">WEBCOLORS</span></div>
     <div class="logo">
       <img src="~/assets/logo.png" alt="logo"/>
     </div>
     <div class="member">
-      <ui-button><span><b>LOGIN</b></span></ui-button>
-      <span>or&nbsp;&nbsp;</span>
-      <ui-button id="register" outlined icon="brush"><span><b>REGISTER</b></span></ui-button>
+      <div class="announce"><span class="text">Click & Copy</span></div>
     </div>
   </div>
 </template>
@@ -38,7 +36,7 @@ export default {
   border: solid 2px #C099F8;
   height: 60px;
 }
-#text{
+.text{
   font-family: Yesteryear, cursive;
   text-align: center;
   font-size: 35px;
