@@ -15,7 +15,14 @@
 
 export default {
   name: 'PaletteLayout',
-  computed: {},
+  watch: {
+    '$store.state.data.palette'() {
+      const rgb = `rgb (${this.$store.state.data.dominant[0]},${this.$store.state.data.dominant[1]},${this.$store.state.data.dominant[2]})`
+      const dominantColor = document.getElementsByClassName('dominant')
+      dominantColor[0].style.backgroundColor = rgb
+      console.log(rgb)
+    },
+  },
   mounted() {
     // eslint-disable-next-line no-console
     const circles = document.querySelectorAll('li')
@@ -29,7 +36,6 @@ export default {
       })
       circle.addEventListener('click', (e) => {
         document.execCommand('copy');
-
       })
       circle.addEventListener("copy", function (event) {
         event.preventDefault();
