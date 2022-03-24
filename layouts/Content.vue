@@ -19,19 +19,14 @@
             <img src="~/assets/choose-color.svg" alt="choose-color-svg" style="width: 80%; height: 236px"/>
             <img src="~/assets/img.png" alt="paint" class="paint" style="width: 150px; height: 150px"/>
           </div>
-      {{paletteArray}} {{dominantColorArray}}
+      {{$store.state.palette}}
+      {{$store.state.dominant}}
     </div>
 </template>
 
 <script>
 export default {
   name: 'ContentLayout',
-  data() {
-    return {
-      paletteArray: [],
-      dominantColorArray: [],
-    }
-  },
   methods: {
     async loadFile(e) {
       try{
@@ -39,8 +34,8 @@ export default {
         formData.append('file', e[0].sourceFile)
         const res = await this.$axios.post('http://localhost:8080/colors', formData)
         // eslint-disable-next-line no-console
-        this.paletteArray = res.data.palette
-        this.dominantColorArray = res.data.dominantColorArray
+        this.$store.commit('palette',res.data.palette)
+        this.$store.commit('dominant',res.data.dominantColor)
       }catch (e) {
         // eslint-disable-next-line no-console
         console.log(e)

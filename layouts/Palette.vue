@@ -15,7 +15,9 @@
 
 export default {
   name: 'PaletteLayout',
+  computed: {},
   mounted() {
+    // eslint-disable-next-line no-console
     const circles = document.querySelectorAll('li')
     circles.forEach((circle) => {
       circle.addEventListener('mouseover', (e) => {
