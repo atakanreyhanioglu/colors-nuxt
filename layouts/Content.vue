@@ -23,13 +23,30 @@
 </template>
 
 <script>
-
 export default {
   name: 'ContentLayout',
+  data() {
+    return {
+      paletteArray: [],
+      dominantColorArray: [],
+    }
+  },
   methods: {
-    loadFile(e) {
-      // eslint-disable-next-line no-console
-      console.log(e)
+    async loadFile(e) {
+      try{
+        const formData = new FormData()
+        formData.append('file', e[0].sourceFile)
+        const res = await this.$axios.post('http://localhost:8080/colors', formData)
+        console.log(res)
+        const { dominantColor, palette }  = await res.json().then(() => {
+          this.dominantColorArray = dominantColor
+          this.paletteArray = palette
+        });
+
+      }catch (e) {
+        // eslint-disable-next-line no-console
+        console.log(e)
+      }
     },
   }
 }
