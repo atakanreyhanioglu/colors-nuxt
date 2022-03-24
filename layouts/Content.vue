@@ -19,6 +19,7 @@
             <img src="~/assets/choose-color.svg" alt="choose-color-svg" style="width: 80%; height: 236px"/>
             <img src="~/assets/img.png" alt="paint" class="paint" style="width: 150px; height: 150px"/>
           </div>
+      {{paletteArray}} {{dominantColorArray}}
     </div>
 </template>
 
@@ -37,12 +38,9 @@ export default {
         const formData = new FormData()
         formData.append('file', e[0].sourceFile)
         const res = await this.$axios.post('http://localhost:8080/colors', formData)
-        console.log(res)
-        const { dominantColor, palette }  = await res.json().then(() => {
-          this.dominantColorArray = dominantColor
-          this.paletteArray = palette
-        });
-
+        // eslint-disable-next-line no-console
+        this.paletteArray = res.data.palette
+        this.dominantColorArray = res.data.dominantColorArray
       }catch (e) {
         // eslint-disable-next-line no-console
         console.log(e)
