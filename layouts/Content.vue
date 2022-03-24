@@ -3,17 +3,16 @@
           <div class="left-side">
             <div class="title">
               <h2>
-                Have you ever wanted to know the color of a website?
+                Have you ever wanted to know the colors of an image?
               </h2>
               Webcolors is the tool you need.
               It gathers all colors and prints them out in a list
               that can be copied and pasted.
             </div>
             <div class="page-url">
-              <ui-textfield class="input-field" outlined>
-                Page url
-              </ui-textfield>
-              <ui-button raised class="color-button"><span><b>Colors</b></span></ui-button>
+              <ui-file accept="image/*" @change="loadFile($event)">
+                <ui-button outlined class="color-button"><span><b>Update an image</b></span></ui-button>
+              </ui-file>
             </div>
           </div>
           <div class="right-side">
@@ -24,8 +23,15 @@
 </template>
 
 <script>
+
 export default {
   name: 'ContentLayout',
+  methods: {
+    loadFile(e) {
+      // eslint-disable-next-line no-console
+      console.log(e)
+    },
+  }
 }
 </script>
 <style>
@@ -37,7 +43,7 @@ export default {
 }
 .left-side {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 50%;
@@ -63,17 +69,13 @@ export default {
 .page-url {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 50px;
   width: 100%;
 }
 .color-button {
   height: 54px;
-  margin-left: 10px;
-  width: 100px;
-}
-.input-field {
-  width: 550px;
+  width: 100%;
 }
 .paint {
   position: absolute;

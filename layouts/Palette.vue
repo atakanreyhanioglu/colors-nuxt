@@ -42,7 +42,7 @@ export default {
       this.$toast({
         timeoutMs: 2000,
         message: 'Color is copied! 👍',
-        position: 'top'
+        position: 'top',
       });
     }
   }
