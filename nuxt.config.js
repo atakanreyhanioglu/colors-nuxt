@@ -62,8 +62,4 @@ export default {
       config.resolve.alias.vue = 'vue/dist/vue.common'
      }
     },
-  // @TODO add product url
-  env: {
-    baseURL: process.env.NODE_ENV === 'production' ? 'https://colorsonimage.herokuapp.com/' : 'http://localhost:3000'
-  },
 }
