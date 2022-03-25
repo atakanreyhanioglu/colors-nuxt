@@ -31,9 +31,17 @@ export default {
         const formData = new FormData()
         formData.append('file', e[0].sourceFile)
         const res = await this.$axios.post('http://localhost:8080/colors', formData)
+        if(res.data.message === 'error') {
+          this.$alert({
+            state: 'error',
+            message: 'Please try again with .png, .jpeg, .jpg or .svg extensions.'
+          });
+          return
+        }
         const value = {
           palette: res.data.palette,
-          dominant: res.data.dominantColor
+          dominant: res.data.dominantColor,
+          message: res.data.message
         }
         this.$store.commit('palette', value)
       }catch (e) {

@@ -1,12 +1,12 @@
 <template>
   <div class="palette">
     <ul>
-      <li class="circle dominant" @click="showToast"></li>
-      <li class="circle firstCircle" @click="showToast"></li>
-      <li class="circle secondCircle" @click="showToast"></li>
-      <li class="circle thirdCircle" @click="showToast"></li>
-      <li class="circle fourthCircle" @click="showToast"></li>
-      <li class="circle fifthCircle" @click="showToast"></li>
+      <li class="circle dominant" :style="cssVars" @click="showToast"></li>
+      <li class="circle firstCircle" :style="cssVars" @click="showToast"></li>
+      <li class="circle secondCircle" :style="cssVars" @click="showToast"></li>
+      <li class="circle thirdCircle" :style="cssVars" @click="showToast"></li>
+      <li class="circle fourthCircle" :style="cssVars" @click="showToast"></li>
+      <li class="circle fifthCircle" :style="cssVars" @click="showToast"></li>
     </ul>
   </div>
 </template>
@@ -15,16 +15,49 @@
 
 export default {
   name: 'PaletteLayout',
+  data() {
+    return {
+      defaultPageColors: true,
+      dominantColor: '',
+      firstCircleColor: '',
+      secondCircleColor: '',
+      thirdCircleColor: '',
+      fourthCircleColor: '',
+      fifthCircleColor: ''
+    }
+  },
+  computed: {
+    cssVars () {
+      return {
+        '--dominant-bg-color': this.defaultPageColors ? '#C099F8': `${this.dominantColor}`,
+        '--firstCircle-bg-color': this.defaultPageColors ? 'grey' : `${this.firstCircleColor}`,
+        '--secondCircle-bg-color': this.defaultPageColors ? '#66B2FF' : `${this.secondCircleColor}`,
+        '--thirdCircle-bg-color': this.defaultPageColors ? 'moccasin' : `${this.thirdCircleColor}`,
+        '--fourthCircle-bg-color': this.defaultPageColors ? '#FF6666' : `${this.fourthCircleColor}`,
+        '--fifthCircle-bg-color': this.defaultPageColors ? 'darkcyan' : `${this.fifthCircleColor}`
+      }
+    }
+  },
   watch: {
     '$store.state.data.palette'() {
-      const rgb = `rgb (${this.$store.state.data.dominant[0]},${this.$store.state.data.dominant[1]},${this.$store.state.data.dominant[2]})`
-      const dominantColor = document.getElementsByClassName('dominant')
-      dominantColor[0].style.backgroundColor = rgb
-      console.log(rgb)
+      this.defaultPageColors = false
+      this.dominantColor = `rgb(${this.$store.state.data.dominant[0]},${this.$store.state.data.dominant[1]},${this.$store.state.data.dominant[2]})`
+      this.$store.state.data.palette.forEach((color, index) => {
+        if(index === 0) {
+          this.firstCircleColor = `rgb(${color[0]},${color[1]},${color[2]}`
+        }else if(index === 1){
+          this.secondCircleColor = `rgb(${color[0]},${color[1]},${color[2]}`
+        }else if(index === 2){
+          this.thirdCircleColor = `rgb(${color[0]},${color[1]},${color[2]}`
+        }else if(index === 3){
+          this.fourthCircleColor = `rgb(${color[0]},${color[1]},${color[2]}`
+        }else if(index === 4){
+          this.fifthCircleColor = `rgb(${color[0]},${color[1]},${color[2]}`
+        }
+      })
     },
   },
   mounted() {
-    // eslint-disable-next-line no-console
     const circles = document.querySelectorAll('li')
     circles.forEach((circle) => {
       circle.addEventListener('mouseover', (e) => {
@@ -90,22 +123,28 @@ ul {
 .dominant {
   width: 180px;
   height: 180px;
-  background-color: #C099F8;
+  background-color: var(--dominant-bg-color);
+  transition: all 0.2s ease;
 }
 .firstCircle {
-  background-color: grey;
+  background-color: var(--firstCircle-bg-color);
+  transition: all 0.2s ease;
 }
 .secondCircle {
-  background-color: #66B2FF;
+  background-color:  var(--secondCircle-bg-color);
+  transition: all 0.2s ease;
 }
 .thirdCircle {
-  background-color: moccasin;
+  background-color: var(--thirdCircle-bg-color);
+  transition: all 0.2s ease;
 }
 .fourthCircle {
-  background-color: #FF6666;
+  background-color: var(--fourthCircle-bg-color);
+  transition: all 0.2s ease;
 }
 .fifthCircle {
-  background-color: darkcyan;
+  background-color:  var(--fifthCircle-bg-color);
+  transition: all 0.2s ease;
 }
 @media (max-width: 965px) {
   .fifthCircle {
