@@ -64,6 +64,6 @@ export default {
     },
   // @TODO add product url
   env: {
-    baseURL: process.env.NODE_ENV === 'production' ? 'producturl' : 'http://localhost:3000'
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://colorsonimage.herokuapp.com/' : 'http://localhost:3000'
   },
 }

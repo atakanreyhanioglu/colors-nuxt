@@ -30,7 +30,7 @@ export default {
    color: #ffffff;
  }
  .footer-bottom{
-   height: 40px;
+   height: 60px;
    display: flex;
    width: 100%;
    text-align: center;
