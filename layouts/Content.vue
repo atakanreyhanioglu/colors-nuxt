@@ -30,7 +30,7 @@ export default {
       try{
         const formData = new FormData()
         formData.append('file', e[0].sourceFile)
-        const res = await this.$axios.post('http://localhost:8080/colors', formData)
+        const res = await this.$axios.post(process.env.baseURL, formData)
         if(res.data.message === 'error') {
           this.$alert({
             state: 'error',
